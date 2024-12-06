@@ -3,34 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body style="background: linear-gradient(135deg, #6a11cb, #2575fc); height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; margin: 0;">
+    <title>Career Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            overflow-x: hidden;
+            transition: background 0.5s ease;
+        }
 
-    <div style="background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 400px;">
-        <h2 style="font-size: 2rem; text-align: center; color: #2575fc; margin-bottom: 1.5rem;">Login</h2>
-        
-        <form action="/" method="POST">
-            <div style="margin-bottom: 1rem;">
-                <label for="username" style="display: block; color: #333; margin-bottom: 0.5rem;">Username</label>
-                <input type="text" id="username" name="username" required
-                    style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff7b00;
+            transform: scale(1.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff7b00;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero:hover {
+            transform: translateY(-10px);
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 3rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff7b00, #ff0a8d);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Animation keyframes */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+            }
+
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.6rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Career Analytics</div>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/career.html">Career Test</a></li>
+                <li><a href="/company.html">Company Portal</a></li>
+                <li><a href="/std.html">Student Portal</a></li>
+                <li><a href="/degree.html">Degrees</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The World's Most Accurate Career Test</h1>
+                <p>Using advanced machine learning, psychometrics, and career satisfaction data, we've reimagined what a career test can be.</p>
+                <a href="appt_test.html" class="cta-button">Take the Test Now</a>
             </div>
-            <div style="margin-bottom: 1.5rem;">
-                <label for="password" style="display: block; color: #333; margin-bottom: 0.5rem;">Password</label>
-                <input type="password" id="password" name="password" required
-                    style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+            <div class="hero-image">
+                <img src="logo.png" alt="Career Test Illustration">
             </div>
-            <button type="submit"
-                style="width: 100%; background: linear-gradient(135deg, #ff7b00, #ff0a8d); color: #fff; padding: 0.8rem; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s ease;">
-                Login
-            </button>
-        </form>
-        
-        <p style="margin-top: 1rem; text-align: center; color: #666;">
-            Don't have an account?
-            <a href="/signup.html" style="color: #2575fc; text-decoration: none; font-weight: 600;">Sign up</a>
-        </p>
-    </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Career Analytics. All rights reserved.</p>
+    </footer>
 </body>
 </html>
