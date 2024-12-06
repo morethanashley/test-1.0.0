@@ -127,7 +127,7 @@ app.get("/appt_test.html", requireAuth, (req, res) => {
     res.sendFile(path.join(__dirname, 'appt_test.html'));
 });
 
-app.get("/welcome.html", requireAuth, (req, res) => {
+app.get("/welcome", requireAuth, (req, res) => {
     res.sendFile(path.join(__dirname, 'welcome.html'));
 });
 
