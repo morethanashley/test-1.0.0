@@ -162,6 +162,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
+                margin-top: 3rem;
             }
 
             .hero-content {
@@ -180,6 +181,51 @@
             .hero p {
                 font-size: 1.1rem;
             }
+
+            /* Mobile Header */
+            nav ul {
+                display: none; /* Hide menu */
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 1rem;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul li a {
+                width: 100%;
+                padding: 1rem;
+                display: block;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            /* Mobile Menu Button */
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+
+            /* Adjust hero image for small devices */
+            .hero-image {
+                order: -1;
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
@@ -187,7 +233,8 @@
     <header>
         <nav>
             <div class="logo">Career Analytics</div>
-            <ul>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="menu">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/career.html">Career Test</a></li>
                 <li><a href="/company.html">Company Portal</a></li>
@@ -213,5 +260,12 @@
     <footer>
         <p>&copy; 2024 Career Analytics. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
